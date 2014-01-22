@@ -1,13 +1,13 @@
 var todoApp = angular.module('todoApp', ['firebase']);
 
 todoApp.controller("LoginController", ["$scope", "$firebase", "$firebaseSimpleLogin", function($scope, $firebase, $firebaseSimpleLogin) {
-  var ref = new Firebase("https://is429-demo.firebaseio.com/");
+  var ref = new Firebase("https://is429tbase.firebaseio.com/");
   $scope.auth = $firebaseSimpleLogin(ref);
 }]).controller('TodoController', ["$scope", "$firebase", "$firebaseSimpleLogin", function($scope, $firebase, $firebaseSimpleLogin) {
 
   $scope.loaded = false;
 
-  var ref = new Firebase('https://is429-demo.firebaseio.com/todos');
+  var ref = new Firebase('https://is429tbase.firebaseio.com/todos');
   $scope.auth = $firebaseSimpleLogin(ref);
   $scope.todos = $firebase(ref);
   $scope.todos.$bind($scope, "todos");
